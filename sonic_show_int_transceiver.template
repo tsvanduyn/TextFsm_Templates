@@ -1,0 +1,14 @@
+Value Filldown Interface (\S+)
+Value Filldown Detected (\S+(\s\S+)?)
+Value Identifier (\S+)
+Value ComplianceCode (\S+)
+Value VendorName (.*$)
+Value VendorRev (\S+)
+
+
+Start
+  ^${Interface}:\s+SFP EEPROM ${Detected} -> Record
+  ^\s+Identifier: ${Identifier}
+  ^\s+\S+\sEthernet Compliance Code: ${ComplianceCode}
+  ^\s+Vendor Name: ${VendorName}
+  ^\s+Vendor Rev: ${VendorRev} -> Record
